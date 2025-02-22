@@ -10,7 +10,7 @@
 
 #include "types.h"
 
-extern uint8_t DefaultKmsData[];
+extern uint16_t DefaultKmsData[];
 __pure size_t getDefaultKmsDataSize();
 
 #endif // NO_INTERNAL_DATA

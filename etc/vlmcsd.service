@@ -1,0 +1,15 @@
+[Unit]
+Description=vlmcsd KMS Server
+After=network.target
+
+[Service]
+Type=simple
+User=nobody
+Group=nogroup
+ExecStart=/usr/local/bin/vlmcsd -D -v -l syslog -p /run/vlmcsd.pid -i /usr/local/etc/vlmcsd.ini -j /usr/local/etc/vlmcsd.kmd
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
